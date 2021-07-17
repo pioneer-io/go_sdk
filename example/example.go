@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pioneer-io/go_sdk"
+	sdk "github.com/pioneer-io/go_sdk"
 )
 
 /*
@@ -13,7 +13,7 @@ run a simple program like this to test out the SDK
 
 func main() {
 	// Initialize an SDK client
-	client := go_sdk.InitMember("http://localhost:3030/features", "JazzyElksRule")
+	client := sdk.InitMember("http://localhost:3030/features", "JazzyElksRule")
 
 	// connect SDK client to Scout to listen for SSE updates
 	client.Connect()
