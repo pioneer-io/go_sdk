@@ -27,7 +27,7 @@ client.Listen()
 ### Failed SSE Connections
 If the SDK fails to connect to the Scout daemon as an eventsource client, the SDK will pause for 2 seconds and retry the connection again up to 10 times.
 
-If the connection fails 10 times, an error will be logged to the user:
+If the connection fails 10 times, an error will be logged to the user (example below) and the SDK will stop trying to connect.
 ```
 2021/07/17 12:22:54 ERROR: Get "http://localhost:3030/features": dial tcp [::1]:3030: connect: connection refused
 exit status 1
