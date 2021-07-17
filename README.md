@@ -90,12 +90,12 @@ The SDK will determine whether the user's context falls within the rollout perce
 Example usage below. In the below example, the flag is toggled on, and the flag's rollout percentage is set to 54%:
 
 ```Go
-	dummy_uuid := "it-is-a-dummy-uuid"
-	client.GetWithContext("test_flag", dummy_uuid) // true
-	// the dummy_uuid sums to 13; the return value is true
+  dummy_uuid := "it-is-a-dummy-uuid"
+  client.GetWithContext("test_flag", dummy_uuid) // true
+  // the dummy_uuid sums to 13; the return value is true
 
-	dummy_uuid2 := "ITSZ A DUMMY"
-	client.GetWithContext("test_flag", dummy_uuid2) // false
+  dummy_uuid2 := "ITSZ A DUMMY"
+  client.GetWithContext("test_flag", dummy_uuid2) // false
   // the dummy_uuid2 sums to 55; the return value is false
 ```
 
