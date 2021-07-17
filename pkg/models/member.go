@@ -65,6 +65,7 @@ func SumContext(context string) int {
 
 func (client *Member) GetWithContext(flagKey, context string) bool {
 	if flag, ok := client.Ruleset[flagKey]; ok {
+		if !flag.Is_Active { return false } // if flag toggle is off; return false
 		intContext := SumContext(context)
 		return intContext <= flag.Rollout
 	} else {
