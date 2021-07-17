@@ -2,6 +2,8 @@
 
 This module is a server-side SDK for applications written in Golang, who are using Pioneer's feature management service.
 
+Visit the [Pioneer-io/Pioneer](https://github.com/pioneer-io/pioneer) repo for more.
+
 ## Getting started
 
 From your Go module:
