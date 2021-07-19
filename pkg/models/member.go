@@ -8,6 +8,8 @@ import (
 	"time"
 
 	"github.com/donovanhide/eventsource"
+
+	"sync"
 )
 
 type Member struct {
@@ -16,6 +18,7 @@ type Member struct {
 	SSEClient   *eventsource.Stream
 	Ruleset     map[string]*FlagData
 	HasRuleset  bool
+	RulesetMutex sync.Mutex
 }
 
 func parseJSONtoSlice(data string) []Flag {
@@ -131,9 +134,11 @@ func (client *Member) HandleIncomingData() {
 			fmt.Println("Initial SSE connection made.")
 
 		} else if parsedEvent.EventType == "ALL_FEATURES" {
+			client.RulesetMutex.Lock()
 			ruleset := mapRuleset(parseJSONtoSlice(string(parsedEvent.Payload)))
 			client.Ruleset = ruleset
 			client.HasRuleset = true
+			client.RulesetMutex.Unlock()
 		}
 	}
 }
