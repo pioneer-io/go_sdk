@@ -1,4 +1,5 @@
 # Go SDK for Pioneer
+[![Test](https://github.com/pioneer-io/go_sdk/actions/workflows/verify.yml/badge.svg)](https://github.com/pioneer-io/go_sdk/actions/workflows/verify.yml)
 
 This module is a server-side SDK for applications written in Golang, who are using Pioneer's feature management service.
 
