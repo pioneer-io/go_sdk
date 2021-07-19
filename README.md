@@ -122,3 +122,6 @@ client.GetWithContextWithDefault("test_flags", dummy_uuid, false))
 // returns true
 // the flag exists in the ruleset; the default value is ignored.
 ```
+
+### Testing
+To run unit tests, `go test` from root directory.
