@@ -1,8 +1,6 @@
 package models
 
 import (
-	// "log"
-	// "strconv"
 	"net/http"
 	"net/url"
 	uuid "github.com/gofrs/uuid"
@@ -35,18 +33,3 @@ func (analytics *Analytics) LogAnalyticsEvent(category, action, value string) er
 	_, err := http.PostForm("https://www.google-analytics.com/collect", v)
 	return err
 }
-
-// func (analytics *Analytics) LogAnalyticsEvent(descriptor string, ruleset map[string]*FlagData) (error) {
-// 	for flagKey, data := range ruleset {
-// 		flagData := flagKey + " -- " + strconv.FormatBool(data.Is_Active)
-// 		analyticEvent := ga.NewEvent(analytics.EventType, descriptor).Label(flagData)
-
-// 		err := analytics.Client.Send(analyticEvent)
-
-// 		if err != nil {
-// 			log.Fatal("There was an error sending the analytics event to Google ", err)
-// 		}
-// 	}
-
-// 	return nil
-// }

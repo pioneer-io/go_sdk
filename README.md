@@ -131,3 +131,18 @@ client.GetWithContextWithDefault("test_flags", dummy_uuid, false))
 ### Testing
 
 To run unit tests, `go test` from root directory.
+
+### Integrating with Google Analytics
+
+You can set up an integration with Google Analytics by providing your GA tracking ID to `InitAnalytics()`. This tracking ID should begin with `UA-`.
+
+You can then log an analytics event any time you wish using `LogAnalyticsEvent()`.
+
+Example:
+
+```Go
+analytics := sdk.InitAnalytics("UA-XXXXXX-X")
+// some application code ...
+// when an event happens that you want to log to GA:
+analytics.LogAnalyticsEvent("pioneer", "log", "1")
+```
