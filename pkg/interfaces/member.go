@@ -10,4 +10,6 @@ type Member interface {
 	Listen()
 	Get(flagKey string) (string)
 	GetWithContext(flagKey, context string) (bool, error)
+	GetWithDefault(flagKey string, defaultVal bool) (bool)
+	GetWithContextWithDefault(flagKey, context string, defaultVal bool) (bool)
 }

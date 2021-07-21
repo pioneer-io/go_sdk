@@ -5,6 +5,8 @@ import (
 	"time"
 
 	sdk "github.com/pioneer-io/go_sdk"
+	// "github.com/pioneer-io/go_sdk/pkg/models"
+	// "gopkg.in/segmentio/analytics-go.v3"
 )
 
 /*
@@ -18,6 +20,17 @@ func main() {
 	// connect SDK client to Scout to listen for SSE updates
 	client.Connect()
 	client.Listen()
+
+	// initialize a google analytics integration
+	analytics := sdk.InitAnalytics("UA-XXXXXX-X")
+	// log a google analytics  event
+	fmt.Println(analytics.LogAnalyticsEvent("pioneer", "log", "1"))
+
+
+	testFlag1 := &models.FlagData{Is_Active: true, Rollout: 50}
+	ruleset := make(map[string]*models.FlagData)
+	ruleset["test_flag_1"] = testFlag1
+
 
 	// this example supposes that you have an existing flag
 	// called 'test this flag' that is toggled off
