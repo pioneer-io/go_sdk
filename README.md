@@ -14,9 +14,9 @@ From your Go module:
 go get github.com/pioneer-io/go_sdk
 ```
 
-To initialize a new SDK client, you'll need to provide the location of Pioneer's Scout daemon. The default port for Scout is `:3030`. The `/features` endpoint is the correct endpoint to receive feature flag updates. Once connected, communication with Scout is uni-directional. The SDK client will receive ruleset updates in real-time via SSE any time a feature flag is created/updated/deleted via the Pioneer dashboard.
+To initialize a new SDK client, you'll need to provide the location of Pioneer's Scout daemon. The default port for Scout is `:3030`. The `/features` endpoint is the correct endpoint to receive feature flag updates. Once connected, communication with Scout is uni-directional. The SDK client will receive ruleset updates in real-time via SSE any time a feature flag is created/updated/deleted via the Compass dashboard.
 
-You'll also need to provide a valid SDK key. The SDK key can be found on the Pioneer application's GUI via the 'Account' tab.
+You'll also need to provide a valid SDK key. The SDK key can be found on the Compass application's user interface via the 'Account' tab.
 
 ```Go
 // Initialize an SDK client
