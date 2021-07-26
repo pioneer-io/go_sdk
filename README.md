@@ -8,7 +8,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/pioneer-io/go_sdk.svg)](https://pkg.go.dev/github.com/pioneer-io/go_sdk)
 
-This module is a server-side SDK for applications written in Golang, who are using Pioneer's feature management service.
+This module is a server-side SDK for applications written in Golang using Pioneer's feature management service.
 
 Visit the [pioneer-io/compass](https://github.com/pioneer-io/compass) repo for more.
 
