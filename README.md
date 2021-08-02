@@ -5,8 +5,10 @@
 # Go SDK for Pioneer
 
 [![Test](https://github.com/pioneer-io/go_sdk/actions/workflows/verify.yml/badge.svg)](https://github.com/pioneer-io/go_sdk/actions/workflows/verify.yml)
-
 [![Go Reference](https://pkg.go.dev/badge/github.com/pioneer-io/go_sdk.svg)](https://pkg.go.dev/github.com/pioneer-io/go_sdk)
+[![Go](https://img.shields.io/github/go-mod/go-version/pioneer-io/go_sdk)](https://github.com/gomods/athens)
+
+
 
 This module is a server-side SDK for applications written in Golang using Pioneer's feature management service.
 
