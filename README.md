@@ -10,7 +10,7 @@
 
 This module is a server-side SDK for applications written in Golang using Pioneer's feature management service.
 
-Visit the [pioneer-io/compass](https://github.com/pioneer-io/compass) repo for more or check out Pioneer's [case study](https://pioneer-io.github.io/).
+Visit the [pioneer-io/pioneer](https://github.com/pioneer-io/pioneer) repo for more or check out Pioneer's [case study](https://pioneer-io.github.io/).
 
 ## Getting started
 
