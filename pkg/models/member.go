@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"time"
-	"math/rand"
 
 	"github.com/donovanhide/eventsource"
 
@@ -14,11 +13,11 @@ import (
 )
 
 type Member struct {
-	SDKKey      string
-	ScoutServer string
-	SSEClient   *eventsource.Stream
-	Ruleset     map[string]*FlagData
-	HasRuleset  bool
+	SDKKey       string
+	ScoutServer  string
+	SSEClient    *eventsource.Stream
+	Ruleset      map[string]*FlagData
+	HasRuleset   bool
 	RulesetMutex sync.Mutex
 }
 
@@ -67,16 +66,11 @@ func SumContext(context string) int {
 	return sum % 100
 }
 
-func JitterPause() int {
-	rand.Seed(time.Now().UnixNano())
-	min := 1  // min 1 second pause
-	max := 10 // max 10 second pause
-	return rand.Intn(max-min+1) + min
-}
-
 func (client *Member) GetWithContext(flagKey, context string) bool {
 	if flag, ok := client.Ruleset[flagKey]; ok {
-		if !flag.Is_Active { return false } // if flag toggle is off; return false
+		if !flag.Is_Active {
+			return false
+		} // if flag toggle is off; return false
 		intContext := SumContext(context)
 		return intContext <= flag.Rollout
 	} else {
@@ -104,7 +98,7 @@ func (client *Member) Connect() (*Member, error) {
 	connectionTries := 1
 
 	for err != nil && connectionTries < maxTries {
-		time.Sleep(time.Duration(JitterPause()) * time.Second) // wait 1-10s then try again
+		time.Sleep(1 * time.Second) // wait 1s then try again
 		fmt.Println("eventsource connection failed. Trying agian.")
 		sseClient, err = eventsource.SubscribeWithRequest("", req)
 		connectionTries += 1

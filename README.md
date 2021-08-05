@@ -9,7 +9,6 @@
 [![Go](https://img.shields.io/github/go-mod/go-version/pioneer-io/go_sdk)](https://github.com/gomods/athens)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1d04449ece98968a14c1/maintainability)](https://codeclimate.com/github/pioneer-io/go_sdk/maintainability)
 
-
 This module is a server-side SDK for applications written in Golang using Pioneer's feature management service.
 
 Visit the [pioneer-io/pioneer](https://github.com/pioneer-io/pioneer) repo for more or check out Pioneer's [case study](https://pioneer-io.github.io/).
@@ -39,7 +38,7 @@ client.Listen()
 
 ### Failed SSE Connections
 
-If the SDK fails to connect to the Scout daemon as an eventsource client, the connection attempt will be retried up to 10 times. The SDK will 'jitter' these connection attempts-- pausing for a random length of time between 1 and 10 seconds (inclusive) in between each attempt.
+If the SDK fails to connect to the Scout daemon as an eventsource client, the connection attempt will be retried up to 10 times, with a 1 second pause between attempts.
 
 If the connection fails 10 times, an error will be logged to the user (example below) and the SDK will stop trying to connect.
 
